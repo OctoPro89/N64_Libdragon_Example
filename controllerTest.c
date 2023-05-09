@@ -19,7 +19,7 @@ int main()
 
     //set the way that the console renders graphics
                             //note that this thing inside the parenthessis is a perameter of the function
-    console_set_render_mode(RENDER_MANUAL)
+    console_set_render_mode(RENDER_MANUAL);
 
     //time_t is a type that will keep track of the current time
     //after the type you name the variable, here i named it current_time
@@ -66,14 +66,14 @@ int main()
             {
                 //the \n just means go to the next line and %d and i means print i
                 // also It should output "A button pressed on controller 1" if you press the a button on controller 1
-                printf("A button pressed on controller: %d", i)
+                printf("A button pressed on controller: %d", i);
             }//if statement curley braces
 
             if( keys.c[i].Z)
             {
                 //the \n just means go to the next line and %d and i means print i
                 // also It should output "Z button pressed on controller 1" if you press the a button on controller 1
-                printf("Z button pressed on controller: %d", i)
+                printf("Z button pressed on controller: %d", i);
             }//if statement curley braces
 
             //prints date and time
