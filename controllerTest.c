@@ -52,28 +52,25 @@ int main(void)
         //I call it keys, keys are readable through libdragon (it is really controller input)
         struct controller_data keys = get_keys_down();
 
-        //in simple terms this code creates a variable called i, sets it to 0, then executes this code until i = 4
-        //everytime it runs the code it increases the variable i by one hence "i++"
-        for( int i = 0; i < 4; i++ )
-        {
-            //you pass i through the array, i is the value you are trying to read
-            //basically the reason I set the code to run four times, is because there are four controller ports
-            //so it cycles through all of the controllers, checking for input from them
-            ///here specifically the a button
-            //you could just read the buttons from port 1 by saying keys.c[1].A and that would work too
-            if( keys.c[i].A)
+            if( keys.c[0].A)
             {
                 //the \n just means go to the next line and %d and i means print i
                 // also It should output "A button pressed on controller 1" if you press the a button on controller 1
-                printf("A button pressed on controller: %d", i);
+                printf("A button pressed on controller 1\n");
             }//if statement curley braces
+            else {
+                printf("                                \n");
+            }
 
-            if( keys.c[i].Z)
+            if( keys.c[0].Z)
             {
                 //the \n just means go to the next line and %d and i means print i
                 // also It should output "Z button pressed on controller 1" if you press the a button on controller 1
-                printf("Z button pressed on controller: %d", i);
-            }//if statement curley braces
+                printf("Z button pressed on controller 1\n");
+            }//if statement curley braces 
+            else {
+                printf("                                \n");
+            }
 
             //prints date and time
             //NULL means no value its just undefined
@@ -82,7 +79,7 @@ int main(void)
             if( current_time != -1 )
             {
                 //prints it
-                printf("Current date/time: %s\n\n", ctime( &current_time ));
+                printf("date/time: %s\n\n", ctime( &current_time ));
             }
 
             //prints that data array that i created above
@@ -91,12 +88,11 @@ int main(void)
                 printf( "%02X", data[i] );
             }
 
-                        //sees what controllers are plugged in
+            //sees what controllers are plugged in
             int controller = get_controllers_present();
             //sees what controllers are plugged in and will print out if they are plugged in
-            printf( "Controller 1 %spresent\n", (controller & CONTROLLER_1_INSERTED) ? "" : "not " );
+            printf( "Controller %d %sconnected\n", controller, (controller & CONTROLLER_1_INSERTED) ? "" : "not " );
             //console loop/ render loop
             console_render();
-        }
     } //also each loop, if statement, function and so on have curly braces around it
 }
