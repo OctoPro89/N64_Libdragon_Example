@@ -8,7 +8,7 @@
 #include <libdragon.h>
 
 //int main is basically where the program starts
-int main()
+int main(void)
 {
     //initializing the console and controllers and some other things
     console_init();
@@ -18,7 +18,7 @@ int main()
     rtc_init();
 
     //set the way that the console renders graphics
-                            //note that this thing inside the parenthessis is a perameter of the function
+    //note that this thing inside the parenthessis is a perameter of the function
     console_set_render_mode(RENDER_MANUAL);
 
     //time_t is a type that will keep track of the current time
@@ -27,7 +27,6 @@ int main()
 
     //int is a kind of data that only stores whole numbers with no decimals,
     //also after each line add a semicolon
-    int press = 0;
 
     //here I create what we call an array,
     //arrays can hold multiple values
@@ -95,7 +94,7 @@ int main()
                         //sees what controllers are plugged in
             int controller = get_controllers_present();
             //sees what controllers are plugged in and will print out if they are plugged in
-            printf( "Controller 1 %spresent\n", (controllers & CONTROLLER_1_INSERTED) ? "" : "not " );
+            printf( "Controller 1 %spresent\n", (controller & CONTROLLER_1_INSERTED) ? "" : "not " );
             //console loop/ render loop
             console_render();
         }
