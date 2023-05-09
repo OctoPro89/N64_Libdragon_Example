@@ -6,7 +6,7 @@ include $(N64_INST)/include/n64.mk
 
 OBJS = $(BUILD_DIR)/controllerTest.o
 
-ctest.z64: N64_ROM_TITLE = "Controller Test"
+controllerTest.z64: N64_ROM_TITLE = "Controller Test"
 
 $(BUILD_DIR)/controllerTest.elf: $(OBJS)
 
@@ -15,4 +15,3 @@ clean:
 .PHONY: clean
 
 -include $(wildcard $(BUILD_DIR)/*.d)
-
